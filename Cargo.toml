@@ -1,0 +1,17 @@
+[package]
+name = "lightning-roulette"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+# Lightning todavía no está en crates.io: se consume directamente del repo.
+lightning = { git = "https://github.com/ImDaiDev/lightning" }
+fastrand = "2"
+twilight-model = "0.18"
+# Carga el archivo .env para no tener que exportar el token a mano.
+dotenvy = "0.15"
+
+# rustls 0.23 exige elegir un proveedor criptográfico. `ring` ya viene en el
+# árbol de dependencias de Twilight, así que lo activamos aquí.
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12", "logging"] }

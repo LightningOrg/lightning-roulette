@@ -1,0 +1,16 @@
+# Artefactos de compilación
+/target/
+
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+/logs/
+
+# Basura del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
